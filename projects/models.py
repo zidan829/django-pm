@@ -23,12 +23,13 @@ class Projects(models.Model):
         choices=ProjectStatus.choices,
         default=ProjectStatus.PENDING
     )
-    created_at=models.DateTimeField(auto_created=True)
+    created_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
     category=models.ForeignKey(Category,on_delete=models.PROTECT)
     user=models.ForeignKey(
         AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
     )
     def __str__(self):
         return self.title
