@@ -1,0 +1,24 @@
+{% load i18n %}
+<ul>
+    {% for task in project.task.set.all %}
+    <li>
+       
+            />
+            {{task.description}}
+
+        
+        </form>
+        {{task.description}}
+
+    </li>
+    {% endfor %}
+
+</ul>
+
+<form method="post" action="{% url 'Task_create'  %}">
+    {% csrf_token %}
+    <input type="hidden" value="{{project.id}}" name="project">
+    <input type="text" name="description" placeholder="{% trans 'New Task' %}" />
+    <input type="submit" value="{% trans 'Add' %}" />
+
+</form>
