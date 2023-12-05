@@ -1,9 +1,13 @@
+{% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
+   
+        <h3 class="mb-0 py-2">{% trans 'New Project' %}</h3>
+        <form method="post">
+            {% csrf_token %}
+           
+        {{form}}
+        <input type="submit" value="Submit"/>
 
     </form>
 {% endblock %}
