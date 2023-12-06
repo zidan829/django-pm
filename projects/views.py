@@ -5,9 +5,10 @@ from django.views.generic import ListView,CreateView,UpdateView,DeleteView
 from . import models 
 from . import forms
 from django.urls import reverse_lazy,reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
-class ProjectListView(ListView):
+class ProjectListView(LoginRequiredMixin,ListView):
     model=models.Projects
     template_name='project/list.html'
     paginate_by=3
@@ -19,13 +20,13 @@ class ProjectListView(ListView):
         if q:where['title__icontains']=q
         return query_set.filter(**where)
 
-class ProjectCreatView(CreateView):
+class ProjectCreatView(LoginRequiredMixin,CreateView):
     model=models.Projects
     form_class=forms.ProjectCreateForm
     template_name='project/creat.html'
     success_url=reverse_lazy('Project_list')
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin,UpdateView):
     model=models.Projects
     form_class=forms.ProjectUpdateForm
     template_name='project/update.html'
@@ -33,13 +34,13 @@ class ProjectUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('Project_update',args=[self.object.id])
     
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin,DeleteView):
 
     model=models.Projects
     template_name='project/delete.html'
     success_url=reverse_lazy('Project_list')
 
-class TaskCreateView(CreateView):
+class TaskCreateView(LoginRequiredMixin,CreateView):
     model=models.Task
     fields=['project','description']
     http_method_names=['post']
@@ -48,14 +49,14 @@ class TaskCreateView(CreateView):
         return reverse('Project_update',args=[self.object.project.id])
     
 
-class TaskUpdateView(UpdateView):
+class TaskUpdateView(LoginRequiredMixin,UpdateView):
     model=models.Task
     fields=['is_completed']
     http_method_names=['post']
     def get_success_url(self):
         return reverse('Project_update',args=[self.object.project.id])
     
-class TaskDeleteViews(DeleteView):
+class TaskDeleteViews(LoginRequiredMixin,DeleteView):
     model=models.Task
     def get_success_url(self):
         return reverse('Project_update',args=[self.object.project.id])
