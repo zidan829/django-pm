@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-09 18:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: projects/forms.py:11
+msgid "Category"
+msgstr "فئة"
+
+#: projects/forms.py:12
+msgid "Title"
+msgstr "العنوان"
+
+#: projects/forms.py:13
+msgid "Descripton"
+msgstr "صندوق الوصف"
+
+#: projects/models.py:13
+msgid "Pending"
+msgstr "تحميل"
+
+#: projects/models.py:14
+msgid "Completed"
+msgstr "اكتمل"
+
+#: projects/models.py:15
+msgid "Postponed"
+msgstr "تأخر"
+
+#: projects/models.py:16
+msgid "Canceled"
+msgstr "ملغى"
+
+#: projects/templates/partials/footer.html:5
+msgid "(c)2021 Hasoub.All rights reserved."
+msgstr "حسوب .جميع الحقوق محفوظة 2021"
+
+#: projects/templates/partials/header.html:4
+msgid "projects management"
+msgstr "أعداد المشاريع"
+
+#: projects/templates/partials/header.html:11
+msgid "Home"
+msgstr "الرئيسية"
+
+#: projects/templates/partials/header.html:23
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: projects/templates/partials/header.html:25
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: projects/templates/partials/header.html:38
+msgid "Search"
+msgstr "بحث"
+
+#: projects/templates/partials/header.html:49
+msgid "Register"
+msgstr "إنشاء الحساب"
+
+#: projects/templates/partials/header.html:53
+msgid "Login"
+msgstr "تسجيل الدخول"
