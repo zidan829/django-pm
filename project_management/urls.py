@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path,include
 import debug_toolbar
 
+from django.utils.translation import gettext as _
+
+admin.site.site_header=_('Project management')
+admin.site.site_title=_('Projects Management')
 urlpatterns = [
     path('__debug__/',include(debug_toolbar.urls)),
     path('admin/', admin.site.urls),
