@@ -8,6 +8,12 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name=_('Category')
+        verbose_name_plural=_('Category')
+
+
 
 class ProjectStatus(models.IntegerChoices):
     PENDING=1,_('Pending')
@@ -34,7 +40,20 @@ class Projects(models.Model):
     )
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name=_('Project')
+        verbose_name_plural=_('Project')
+
+
 class Task(models.Model):
     description=models.TextField()
     is_completed=models.BooleanField(default=False)
     project=models.ForeignKey(Projects,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.description 
+    
+    class Meta:
+      verbose_name=_('Task')
+      verbose_name_plural=_('Task')
